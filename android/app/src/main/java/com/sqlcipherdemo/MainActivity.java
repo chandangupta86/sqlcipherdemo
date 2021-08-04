@@ -1,6 +1,13 @@
 package com.sqlcipherdemo;
 
 import com.facebook.react.ReactActivity;
+import com.facebook.react.ReactPackage;
+import com.facebook.react.shell.MainReactPackage;
+
+import org.pgsqlite.SQLitePluginPackage;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends ReactActivity {
 
@@ -11,5 +18,11 @@ public class MainActivity extends ReactActivity {
   @Override
   protected String getMainComponentName() {
     return "sqlcipherdemo";
+  }
+
+  protected List<ReactPackage> getPackages() {
+    return Arrays.<ReactPackage>asList(
+            new SQLitePluginPackage(this),   // register SQLite Plugin here
+            new MainReactPackage());
   }
 }
